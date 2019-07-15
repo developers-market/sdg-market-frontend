@@ -14,12 +14,15 @@ ENV GITHUB_REDIRECT_URI=http://localhost/callback
 ## Non interactive Debian package installation
 ENV DEBIAN_FRONTEND noninteractive
 
+RUN sed -i '/jessie-updates/d' /etc/apt/sources.list
+
 ## Let refresh first the Debian repo
 RUN apt-get update \
     && apt-get -y install wget \
     gnupg \
     apt-transport-https \
-    openssl
+    openssl \
+    dos2unix
 
 ## Adding Sury (php backports) repository
 RUN wget -qO- https://deb.nodesource.com/setup_10.x | bash -
@@ -50,5 +53,6 @@ COPY nginx.conf /etc/nginx/sites-enabled/default
 
 ## Prepare the proper init script
 COPY init_entry.sh /init_entry.sh
+RUN dos2unix /init_entry.sh
 RUN chmod +x /init_entry.sh
 ENTRYPOINT [ "/init_entry.sh" ]
