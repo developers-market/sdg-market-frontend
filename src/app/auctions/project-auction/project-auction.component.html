@@ -52,6 +52,7 @@
                 <th>Ask (to sell) per token</th>
                 <th>Quantity</th>
                 <th>Who</th>
+                <th>Identified Goal</th>
                 <th class="actions">Action</th>
 
               </tr>
@@ -73,6 +74,8 @@
                   <a href="https://github.com/{{ sale.seller?.username }}">
                     @{{ sale.seller?.username }}
                   </a>
+                </td>
+                <td> 
                 </td>
                 <td class="actions">
                   <a class="btn btn-dark" data-toggle="modal" (click)="buyTokens(buyModalForm, sale)"
@@ -98,17 +101,15 @@
                     @{{ offer.purchaser?.username }}
                   </a>
                 </td>
-                <!--<td class="actions">-->
-                  <!--<a class="btn btn-dark" data-toggle="modal" data-target="#new-offer-modal"-->
-                     <!--aria-controls="new-offer-modal">-->
-                    <!--<i class="fas fa-fw fa-gavel"></i> Sell-->
-                  <!--</a>-->
+                <td style="background-color: rgb(220, 83, 20);">
+                    {{offer?.goal}}
+                    Innovation and Infrastructure
+                </td>
                 <td class="actions">
                   <a class="btn btn-dark" data-toggle="modal" (click)="sellToExisting(sellModalForm, offer)"
                      aria-controls="sell-to-existing-modal">
                     <i class="fas fa-fw fa-gavel"></i> Sell
                   </a>
-
               </tr>
               </tbody>
               <tfoot>
@@ -181,6 +182,16 @@
                       </div>
                     </div>
                   </div>
+                </div>
+                <div class="form-group row">
+                  <label class=col-sm-7>
+                    Goal
+                  </label>
+                  <select class="col-sm-5">
+                    <option *ngFor="let goal of goals">
+                      {{ goal }}
+                    </option>
+                  </select>
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-12 text-right">
@@ -376,11 +387,21 @@
                     </div>
                   </div>
                 </div>
-
+                <div class="form-group row">
+                  <label class=col-sm-7>
+                      Goal
+                  </label>
+                  <select class="col-sm-5">
+                    <option *ngFor="let goal of goals">
+                      {{ goal }}
+                    </option>
+                  </select>
+                </div>
                 <div class="form-group row">
                   <div class="col-sm-12 text-right">
                     <button type="submit" class="btn" [disabled]="buyingFormDisabled"><i class="fas fa-fw fa-shopping-cart"></i>
-                      Create purchase offer</button>
+                      Create purchase offer
+                    </button>
                   </div>
                 </div>
               </form>

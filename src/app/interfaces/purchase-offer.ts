@@ -8,5 +8,6 @@ export interface PurchaseOffer {
     offer_starts_utc_date: string,
     offer_expires_at_utc_date: string,
     project: GitProject,
-    purchaser: User
+    purchaser: User,
+    goal: number,
 };

@@ -39,6 +39,29 @@ export class ProjectAuctionComponent implements OnInit {
   public currentContributions: Array<Contribution>;
   public currentProject: GitProject;
 
+  // TODO: Replace by query from API
+  public goals: Array<String> = [
+    'None',
+    'No Poverty',
+    'No Hunger',
+    'Good Health',
+    'Quality Education',
+    'Gender Equality',
+    'Clean Water and Sanitation',
+    'Renewable Energy',
+    'Good Jobs and Economic Growth',
+    'Innovation and Infrastructure',
+    'Reduced Inequalities',
+    'Sustainable Cities',
+    'Reduced Inequalities',
+    'Sustainable Cities and Communities',
+    'Responsible Consumption',
+    'Climate Action',
+    'Life Below Water',
+    'Life On Land',
+    'Peace and Justice',
+    'Partnership for the Goals'];
+
   public buyingFormDisabled = false;
   public sellingFormDisabled = false;
 
@@ -81,6 +104,7 @@ export class ProjectAuctionComponent implements OnInit {
     this.buyFormSumitted = false;
     this.buyForm = this.fb.group({
       nb_tokens: [0, [Validators.required]],
+      goal: [0, [Validators.required]],
       sell_offer: [sellForm, [Validators.required]]
     });
   }
@@ -90,6 +114,7 @@ export class ProjectAuctionComponent implements OnInit {
 
     this.purchaseOfferForm = this.fb.group({
       number_of_tokens: [1, [Validators.required]],
+      goal: [0, [Validators.required]],
       purchase_price_per_token: [1, [Validators.required]],
       project: [this.projectId, [Validators.required]]
     });
@@ -225,10 +250,10 @@ export class ProjectAuctionComponent implements OnInit {
           );
         })
         .catch(error => {
-          let errorMsg = "";
+          let errorMsg = '';
           if (error.error.code == 400) {
             for (let id in error.error.errors.children) {
-              errorMsg += `${id} : ${error.error.errors.children[id].errors.join(". ")}`
+              errorMsg += `${id} : ${error.error.errors.children[id].errors.join('. ')}`
             }
           }
           this.toastr.error(errorMsg ? errorMsg : 'Unknown error', 'An error occurred while saving your data');
