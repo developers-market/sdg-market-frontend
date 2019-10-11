@@ -5,9 +5,8 @@
       <th>Transaction label</th>
       <th>Seller</th>
       <th>Buyer</th>
-      <th>Token</th>
+      <th>Tokens</th>
       <th>Price per token</th>
-      <!-- <th>All time ROC</th> -->
     </tr>
   </thead>
   <tbody>
@@ -38,15 +37,11 @@
       </td>
 
       <td>
-        <span class="badge badge-warning" *ngIf="transaction.nb_sdg">
+        <span *ngIf="transaction.nb_sdg">
           <i class="fas fa-fw"></i>
-          {{ transaction.nb_sdg / transaction.nb_tokens }}
+          {{ -transaction.nb_sdg / transaction.nb_tokens }}
         </span>
       </td>
-<!--       <td>
-        {{ (transaction.nb_sdg || currentTransactions[0].nb_sdg) - currentTransactions[0].nb_sdg)/(transaction.nb_sdg || 1) }}
-        &#37;
-      </td> -->
     </tr>
   </tbody>
   <tfoot>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BackendApiService } from './backend-api.service';
 import { Observable } from 'rxjs';
 import { PurchaseOffer } from 'src/app/interfaces/purchase-offer';
+import { SellOffer } from 'src/app/interfaces/sell-offer';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,10 @@ export class ApiPurchaseOfferService {
     return this.backendApi.get("purchase-offers", {
       "project": projectId
     });
+  }
+
+  public sellToExistingBid(id: number, data: PurchaseOffer): Observable<SellOffer> {
+    return this.backendApi.post(`purchase-offers/${id}/sell`, data);
   }
 
   public get(id: number): Observable<PurchaseOffer> {
@@ -30,5 +35,9 @@ export class ApiPurchaseOfferService {
 
   public delete(id: number): Observable<any> {
     return this.backendApi.delete(`purchase-offers/${id}`);
+  }
+
+  public sell(data): Observable<PurchaseOffer> {
+    return this.backendApi.update(`sell-offers/${data.buy_offer}/sell`, data);
   }
 }
