@@ -25,10 +25,13 @@ export class ApiSellOfferService {
   }
 
   public buy(data): Observable<SellOffer> {
-    return this.backendApi.update(`sell-offers/${data.sell_offer}/buy`, data);
+    return this.backendApi.update(`sell-offers/${data.sell_offer}/buy`, {
+      nb_tokens: data.nb_tokens
+    });
   }
 
   public create(data: SellOffer): Observable<SellOffer> {
+    console.log("POSTING ", data);
     return this.backendApi.post(`sell-offers`, data);
   }
 
