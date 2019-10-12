@@ -119,7 +119,7 @@ export class ProjectAuctionComponent implements OnInit {
       .getAll(this.projectId)
       .toPromise()
       .then(sales => {
-        this.currentSales = sales;
+        this.currentSales = sales.sort((s1, s2) => +s2.sell_price_per_token - +s1.sell_price_per_token);
         console.log('Selling offers', sales);
       });
   }
@@ -152,7 +152,7 @@ export class ProjectAuctionComponent implements OnInit {
       .getAll(this.projectId)
       .toPromise()
       .then(purchasesOffer => {
-        this.currentPurchaseOffers = purchasesOffer;
+        this.currentPurchaseOffers = purchasesOffer.sort((s1, s2) => +s2.purchase_price_per_token - +s1.purchase_price_per_token );
         console.log('Purchases offers', purchasesOffer);
       });
   }
