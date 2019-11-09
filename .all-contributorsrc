@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "Sofia-Pika",
+      "name": "Pika",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/44819301?v=4",
+      "profile": "https://github.com/Sofia-Pika",
+      "contributions": [
+        "design",
+        "test",
+        "projectManagement"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "sdg-market-frontend",
+  "projectOwner": "developers-market",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
