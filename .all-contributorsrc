@@ -6,6 +6,14 @@
   "commit": false,
   "contributors": [
     {
+      "login": "Sofia-Pika",
+      "name": "Pika",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/44819301?v=4",
+      "profile": "https://github.com/Sofia-Pika",
+      "contributions": [
+        "design",
+        "test",
+        "projectManagement"
       "login": "Xoeseko",
       "name": "Xoeseko",
       "avatar_url": "https://avatars0.githubusercontent.com/u/16857411?v=4",
