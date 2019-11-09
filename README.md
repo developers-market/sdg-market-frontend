@@ -36,6 +36,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/Sofia-Pika"><img src="https://avatars0.githubusercontent.com/u/44819301?v=4" width="100px;" alt="Pika"/><br /><sub><b>Pika</b></sub></a><br /><a href="#design-Sofia-Pika" title="Design">🎨</a> <a href="https://github.com/developers-market/sdg-market-frontend/commits?author=Sofia-Pika" title="Tests">⚠️</a> <a href="#projectManagement-Sofia-Pika" title="Project Management">📆</a></td>
+    <td align="center"><a href="https://github.com/Xoeseko"><img src="https://avatars0.githubusercontent.com/u/16857411?v=4" width="100px;" alt="Xoeseko"/><br /><sub><b>Xoeseko</b></sub></a><br /><a href="https://github.com/developers-market/sdg-market-frontend/commits?author=Xoeseko" title="Code">💻</a> <a href="#business-Xoeseko" title="Business development">💼</a> <a href="https://github.com/developers-market/sdg-market-frontend/commits?author=Xoeseko" title="Documentation">📖</a> <a href="#design-Xoeseko" title="Design">🎨</a> <a href="#ideas-Xoeseko" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-Xoeseko" title="Maintenance">🚧</a> <a href="#projectManagement-Xoeseko" title="Project Management">📆</a> <a href="#review-Xoeseko" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/developers-market/sdg-market-frontend/commits?author=Xoeseko" title="Tests">⚠️</a></td>
   </tr>
 </table>
 
